@@ -8,6 +8,9 @@ def register_routes(bp):
     @bp.route("/register", methods=["POST"])
     def register():
         data = request.get_json()
+        temp = User.find_one({"email": data["email"]})
+        if temp:
+            return jsonify({"msg": "User with this email already exists"}), 409
         user = User(
             email=data["email"],
             password=data["password"]

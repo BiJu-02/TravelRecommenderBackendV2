@@ -11,9 +11,10 @@ jwt = JWTManager(app)
 
 init_db()
 
-@app.route("/")
-def index():
-    return "Flask Server for Travel Recommendation", 200
+
+# @app.route("/")
+# def index():
+#     return "Flask Server for Travel Recommendation", 200
 
 
 from app.routes import auth_bp, travel_bp

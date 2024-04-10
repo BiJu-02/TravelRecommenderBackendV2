@@ -9,6 +9,10 @@ services:
     environment:
       - MONGO_URI=mongodb://mongo:27017/travelRecDB
       - JWT_SECRET_KEY=f2a8e0c6b1d5fc3e9a7b4d8f0e2c5a1b3d7f9e6c2a8b1d4f0e2c5a3b6d8f1e3
+    develop:
+      watch:
+        - path: ./FlaskApp
+          action: rebuild
 
   mongo:
     image: mongo
